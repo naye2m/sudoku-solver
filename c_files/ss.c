@@ -18,7 +18,6 @@ bool isSafe(int r, int c, int n);
 bool findUnassigned(int *r, int *c);
 bool solveSudoku();
 int ati(char a);
-void getBoard();
 int main(int argc, char **argv)
 {
     char *codeName = argv[0];
@@ -27,24 +26,22 @@ int main(int argc, char **argv)
         printf("Usage:%s <81chars_sudoku_string_withoutspace> OR [row1, row2 .... row9]\n", codeName);
         return 1;
     }
+    if (strlen(argv[1]) != 81)
+    {
+        printf("Usage:%s <81chars_sudoku_string_withoutspace> OR [row1, row2 .... row9]\n", codeName);
+        return 2;
+    }
     solvedB = createSCArray(N, N);
     problemB = createSCArray(N, N);
     if (argc == 2)
     {
-        if (strlen(argv[1]) != 81)
+        for (int k = 0; k < 81; k++)
         {
-            printf("Usage:%s <81chars_sudoku_string_withoutspace> OR [row1, row2 .... row9]\n", codeName);
-            printf("input mennually :\n");
-            getBoard();
+            int i = k / 9;
+            int j = k % 9;
+            problemB[i][j] = ati(argv[1][k]);
+            solvedB[i][j] = problemB[i][j];
         }
-        else
-            for (int k = 0; k < 81; k++)
-            {
-                int i = k / 9;
-                int j = k % 9;
-                problemB[i][j] = ati(argv[1][k]);
-                solvedB[i][j] = problemB[i][j];
-            }
     }
     for (int k = 0; k < 81; k++)
     {
@@ -64,10 +61,6 @@ int main(int argc, char **argv)
     {
         for (int j = 0; j < 9; j++)
         {
-            if (problemB[i][j] == 0)
-                printf(YELLOW);
-            else
-                printf(GREEN);
             printf("%i" RESET, solvedB[i][j]);
         }
         // printf("\n");
