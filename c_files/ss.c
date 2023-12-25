@@ -138,22 +138,3 @@ int ati(char a)
     else
         return -1;
 }
-void getBoard()
-{
-    char str[10];
-    for (int i = 0; i < N; i++)
-    {
-        printf("insert row %i of %i <%i Digit without space>\n", i + 1, N, N);
-        *(str + 1) = '\0';
-        while (strlen(str) != N || str[8] == '\n')
-        {
-            printf("Enter row %i of %i: ", i + 1, N);
-            fgets(str, sizeof(str), stdin);
-        }
-        for (int j = 0; j < N; j++)
-        {
-            problemB[i][j] = ati(str[j]);
-        }
-    }
-    printf("\n");
-}
