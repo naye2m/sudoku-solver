@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define GREEN "<span class=\"ss_green\">"
-#define YELLOW "<span class=\"ss_yellow\">"
-#define RED "<span class=\"ss_red\">"
-#define RESET "</span>"
+#define GREEN "\e[38;2;255;255;255;1m\e[48;2;106;170;100;1m"
+#define YELLOW "\e[38;2;255;255;255;1m\e[48;2;201;180;88;1m"
+#define RED "\e[38;2;255;255;255;1m\e[48;2;220;20;60;1m"
+#define RESET "\e[0;39m"
 #define N 9
 unsigned char typedef sC;
 sC **problemB;
