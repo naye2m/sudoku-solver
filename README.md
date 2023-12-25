@@ -142,7 +142,7 @@ To run the project locally or deploy it, follow these steps:
    flask run
    ```
 
-4. Open the Sudoku Solver website in your browser and follow the usage instructions above.
+4. Open the Sudoku Solver website in your browser and follow [the usage instructions above](#flask-integration-for-web-interface).
 
 ### Command Line usage
 
