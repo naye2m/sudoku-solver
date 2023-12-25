@@ -22,11 +22,6 @@ void getBoard();
 int main(int argc, char **argv)
 {
     char *codeName = argv[0];
-    if (argc != 2)
-    {
-        printf("Usage:%s <81chars_sudoku_string_withoutspace> OR [row1, row2 .... row9]\n", codeName);
-        return 1;
-    }
     solvedB = createSCArray(N, N);
     problemB = createSCArray(N, N);
     if (argc == 2)
