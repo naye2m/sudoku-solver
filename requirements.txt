@@ -1,9 +1,8 @@
-pip install cs50
-pip install flask
-pip install flask_session
-pip install werkzeug.security
-pip install markupsafe
-pip install datetime
-pip install pytz
-pip install requests
-pip install uuid
+cs50
+flask
+flask_session
+markupsafe
+datetime
+pytz
+requests
+uuid
