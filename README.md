@@ -1,6 +1,8 @@
 # Sudoku Solver
+
 #### Video Demo:  <URL HERE>
-#### Description:
+
+#### Description
 
 This Sudoku Solver, implemented in C using a backtracking algorithm, is designed to find solutions to Sudoku puzzles. Additionally, the solver can be integrated with Flask to provide a web interface for solving Sudoku puzzles.
 
@@ -8,199 +10,187 @@ This Sudoku Solver, implemented in C using a backtracking algorithm, is designed
 
 The project directory is structured as follows:
 
-- `templates`: Contains HTML templates for the Flask application.
-  - `layout.html`: Common layout template.
-  - `history_ss.html`: Template for displaying Sudoku solving history.
-  - `apology.html`: Apology template.
-  - `solve_sudoku.html`: Template for solving Sudoku puzzles.
-  - `base.html`: Base template.
-  - `register.html`: Template for user registration.
-  - `login.html`: Template for user login.
+* `templates`: Contains HTML templates for the Flask application.
+  + `layout.html`: Common layout template.
+  + `history_ss.html`: Template for displaying Sudoku solving history.
+  + `apology.html`: Apology template.
+  + `solve_sudoku.html`: Template for solving Sudoku puzzles.
+  + `base.html`: Base template.
+  + `register.html`: Template for user registration.
+  + `login.html`: Template for user login.
 
-- `requirements.txt`: Lists project dependencies.
+* `requirements.txt`: Lists project dependencies.
 
-- `c_files`: Contains C source code for the Sudoku solver.
-  - `ss`: (Already compiled code for bash only. Use compile with c compiler in your device for better performance.)
-  - `ss.c`: C source code for the Sudoku solver simplex and only for geting values without formated.
-  - `solve_sudoku`: (Already compiled code for bash only. Use compile with c compiler in your device for better performance.)
-  - `solve_sudoku.c`: C source code for the Sudoku solver use for geting values formated.
+* `c_files`: Contains C source code for the Sudoku solver.
+  + `ss`: (Already compiled code for bash only. Use compile with c compiler in your device for better performance.) [Check Tutorial](#building-the-project-1) for building cfiles.
+  + `ss.c`: C source code for the Sudoku solver simplex and only for getting values without formatted.
+  + `solve_sudoku`: (Already compiled code for bash only. Use compile with c compiler in your device for better performance.) [Check Tutorial](#building-the-project-1) for building cfiles.
+  + `solve_sudoku.c`: C source code for the Sudoku solver use for getting values formatted.
 
-- `helpers.py`: Python script containing helper functions.
+* `helpers.py`: Python script containing helper functions.
 
-- `test.db`: SQLite database file.
+* `test.db`: SQLite database file.
 
-- `static`: Contains static files for the Flask application.
-  - `css`: Directory for CSS files.
+* `static`: Contains static files for the Flask application.
+  + `css`: Directory for CSS files.
     - `solve_sudoku.css`: CSS file for styling the Solve Sudoku page.
     - `style.css`: General stylesheet.
     - `history_ss.css`: CSS file for styling the Sudoku solving history page.
-  - `script`: Directory for JavaScript files.
+  + `script`: Directory for JavaScript files.
     - `history_ss.js`: JavaScript file for the Sudoku solving history page.
     - `script.js`: General JavaScript file.
     - `solve_sudoku.js`: JavaScript file for the Solve Sudoku page.
-  - `favicon.ico`: Favicon icon.
+  + `favicon.ico`: Favicon icon.
 
-- `app.py`: Flask application script.
+* `app.py`: Flask application script.
 
 ## Usage
 
-##  Website usage
+### Website usage
 
 This is a web-based Sudoku solver implemented in Flask. It allows users to input Sudoku puzzles, either through a string or manual entry, and displays the solved puzzle along with backtracking complexity.
 
-
-### Web Interface
+#### Web Interface
 
 1. Open the Sudoku Solver website on your browser.
 
 2. You can access the Sudoku solver by visiting the following URL:
+   
 
-   ```
+```
    https://sudoku.solver.naye.xyz/ss
    ```
+
 3. You can access the Sudoku solver history by visiting the following URL:
+   
 
+```
+   https://sudoku.solver.naye.xyz/history_ss
    ```
-   httpsS://sudoku.solver.naye.xyz/history_ss
-   ```
 
-3. Use the web interface to interact with the solver:
-
+4. Use the web interface to interact with the solver:
    - **Toggle Input Area:** Click the "Toggle Input Area" button to show/hide the input area.
-
    - **Input Area:** Enter the Sudoku puzzle either as a string without spaces or manually input row by row.
-
    - **Check Button:** Click the "Check" button to solve the Sudoku puzzle.
-
    - **Result:** The solved Sudoku puzzle will be displayed below the input area.
-
    - **Highlighting:** Use the "Highlight" dropdown to highlight specific numbers in the solved puzzle.
 
-4. Additionally, you can share a specific Sudoku puzzle by appending the `?s=` parameter to the URL. For example:
+5. Additionally, you can share a specific Sudoku puzzle by appending the `?s=` parameter to the URL. For example:
+   
 
-   ```
+```
    https://sudoku.solver.naye.xyz/ss?s=090600800000503400807000610000050007000790100000006300070000020040000000203061784
    ```
 
    This will directly display the solution for the provided Sudoku puzzle.
 
-### Command Line
+#### Command Line
 
 If you prefer a command-line interface, you can use the following API endpoint:
 
-- **Endpoint:**
+* **Endpoint:**
+  
 
-  ```
+```
   https://sudoku.solver.naye.xyz/api/ss?sudoku=<81chars_sudoku_string_without_space>
   ```
 
-- **Example:**
+* **Example:**
+  
 
-  ```
+```
   https://sudoku.solver.naye.xyz/api/ss?sudoku=090600800000503400807000610000050007000790100000006300070000020040000000203061784
   ```
-- **Using Curl:**
 
-  ```cURL
-  Certainly! Here's the updated section for your README file that includes an example of using the API with curl:
+* **Using Curl:**
+You can also use the Sudoku solver API by making a GET request with `curl` . Here's an example:
+  
 
-
-
-### API
-
-You can also use the Sudoku solver API by making a GET request with `curl`. Here's an example:
-
-```curl
-curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=<your_session_key>'
-
-```
-If don't have any key use this one
-```
-curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
-```
-
-Replace the `sudoku` parameter with your Sudoku puzzle.
-
-Make sure to include the necessary authentication information, such as cookies or tokens, for successful API requests.
-
-...
-```
-
-Feel free to adjust the wording or provide additional details based on your specific use case.
+```bash
+  curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000&token=2024' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
   ```
 
-  This will return the solution for the provided Sudoku puzzle in JSON format.
+   If you don't have any key, use this one:
+   
+
+```bash
+   curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000&token=2024' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
+   ```
 
 ### Building the Project
 
 To run the project locally or deploy it, follow these steps:
 
 1. Clone the repository:
+   
 
-   ```bash
+```bash
    git clone https://github.com/naye2m/sudoku-solver.git
    ```
 
 2. Install dependencies:
+   
 
-   ```bash
+```bash
    pip install -r requirements.txt
    ```
 
 3. Run the Flask application:
+   
 
-   ```bash
+```bash
    flask run
    ```
 
 4. Open the Sudoku Solver website in your browser and follow the usage instructions above.
 
+### Command Line usage
 
-## Command Line usage
-
-### Building the Project
+#### Building the Project
 
 To compile the project using a C compiler (e.g., gcc), use the following command:
+   
 
 ```bash
-gcc sudoku_solver.c -o sudoku_solver
-```
-#To use the solver with a Sudoku puzzle represented as a string of 81 characters without spaces, use the following command-line format:
+   gcc sudoku_solver.c -o sudoku_solver
+   ```
+
+To use the solver with a Sudoku puzzle represented as a string of 81 characters without spaces, use the following command-line format:
+   
 
 ```bash
-./sudoku_solver <81chars_sudoku_string_without_space>
-```
+   ./sudoku_solver <81chars_sudoku_string_without_space>
+   ```
 
 Example:
+   
 
 ```bash
-./sudoku_solver 090600800000503400807000610000050007000790100000006300070000020040000000203061784
-```
-
-### Manual Input
+   ./sudoku_solver 090600800000503400807000610000050007000790100000006300070000020040000000203061784
+   ```
 
 If no command-line argument is provided, the program will prompt the user to enter the Sudoku puzzle row by row. Use the following command:
+   
 
 ```bash
-./sudoku_solver
-```
+   ./sudoku_solver
+   ```
 
-
-## Flask Integration for Web Interface
+#### Flask Integration for Web Interface
 
 The Sudoku solver can be integrated with Flask to provide a web interface for solving Sudoku puzzles. The Flask app is available in the `./app.py` file. To run the Flask app:
+   
 
 ```bash
-python app.py
-```
+   python app.py
+   ```
 
 Visit `http://127.0.0.1:5000` in your web browser to access the web interface.
 
-## Notes
+### Notes
 
-- The efficiency of the solver is influenced by the complexity of the Sudoku puzzle.
+* The efficiency of the solver is influenced by the complexity of the Sudoku puzzle.
 
 ## License
 
-This project is licensed under the MIT License. For details, see the [LICENSE](LICENSE) file.
-
+This project is licensed under the  NoLicense. For details, see the [LICENSE](LICENSE) file.
