@@ -3,8 +3,7 @@ pip install flask
 pip install flask_session
 pip install werkzeug.security
 pip install markupsafe
-pip install re
-pip install subprocess
-pip install json
-pip install random
-pip install string
+pip install datetime
+pip install pytz
+pip install requests
+pip install uuid
