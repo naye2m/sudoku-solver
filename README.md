@@ -10,7 +10,6 @@ The project directory is structured as follows:
 
 - `templates`: Contains HTML templates for the Flask application.
   - `layout.html`: Common layout template.
-  - `fp.html`: (Include a brief description if applicable)
   - `history_ss.html`: Template for displaying Sudoku solving history.
   - `apology.html`: Apology template.
   - `solve_sudoku.html`: Template for solving Sudoku puzzles.
@@ -21,8 +20,10 @@ The project directory is structured as follows:
 - `requirements.txt`: Lists project dependencies.
 
 - `c_files`: Contains C source code for the Sudoku solver.
-  - `ss`: (Include a brief description if applicable)
-  - `ss.c`: C source code for the Sudoku solver.
+  - `ss`: (Already compiled code for bash only. Use compile with c compiler in your device for better performance.)
+  - `ss.c`: C source code for the Sudoku solver simplex and only for geting values without formated.
+  - `solve_sudoku`: (Already compiled code for bash only. Use compile with c compiler in your device for better performance.)
+  - `solve_sudoku.c`: C source code for the Sudoku solver use for geting values formated.
 
 - `helpers.py`: Python script containing helper functions.
 
@@ -115,10 +116,10 @@ curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=83541690729005743100000000006
 ```
 If don't have any key use this one
 ```
-api_session_key = "eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y"
+curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
 ```
 
-Replace the `sudoku` parameter with your Sudoku puzzle and the `token` parameter with your authentication token.
+Replace the `sudoku` parameter with your Sudoku puzzle.
 
 Make sure to include the necessary authentication information, such as cookies or tokens, for successful API requests.
 
@@ -155,9 +156,16 @@ To run the project locally or deploy it, follow these steps:
 4. Open the Sudoku Solver website in your browser and follow the usage instructions above.
 
 
-### Command Line usage
+## Command Line usage
 
-To use the solver with a Sudoku puzzle represented as a string of 81 characters without spaces, use the following command-line format:
+### Building the Project
+
+To compile the project using a C compiler (e.g., gcc), use the following command:
+
+```bash
+gcc sudoku_solver.c -o sudoku_solver
+```
+#To use the solver with a Sudoku puzzle represented as a string of 81 characters without spaces, use the following command-line format:
 
 ```bash
 ./sudoku_solver <81chars_sudoku_string_without_space>
@@ -177,13 +185,6 @@ If no command-line argument is provided, the program will prompt the user to ent
 ./sudoku_solver
 ```
 
-## Building the Project
-
-To compile the project using a C compiler (e.g., gcc), use the following command:
-
-```bash
-gcc sudoku_solver.c -o sudoku_solver
-```
 
 ## Flask Integration for Web Interface
 

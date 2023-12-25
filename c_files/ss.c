@@ -7,10 +7,6 @@
 #define YELLOW ""
 #define RED ""
 #define RESET ""
-// #define GREEN "<span class=\"ss_green\">"
-// #define YELLOW "<span class=\"ss_yellow\">"
-// #define RED "<span class=\"ss_red\">"
-// #define RESET "</span>"
 #define N 9
 unsigned char typedef sC;
 sC **problemB;
@@ -50,33 +46,6 @@ int main(int argc, char **argv)
                 solvedB[i][j] = problemB[i][j];
             }
     }
-    // else if (argc == 10)
-    // {
-    //     for (int i = 0; i < 9; i++)
-    //     {
-    //         for (int j = 0; j < 9; j++)
-    //         {
-    //             problemB[i][j] = ati(argv[i + 1][j]);
-    //             solvedB[i][j] = problemB[i][j];
-    //         }
-    //     }
-    // }
-    // else
-    // {
-    //     getBoard();
-    // }
-    // for (int i = 0; i < 9; i++)
-    // {
-    //     for (int j = 0; j < 9; j++)
-    //     {
-    //         if (problemB[i][j] == 0)
-    //             printf(RED);
-    //         else
-    //             printf(GREEN);
-    //         printf("%i" RESET, problemB[i][j]);
-    //     }
-    //     printf("\n");
-    // }
     for (int k = 0; k < 81; k++)
     {
         int i = k / 9;
@@ -85,13 +54,12 @@ int main(int argc, char **argv)
     }
     count = 0;
     if (!solveSudoku())
-    // printf("Done: solved sudoku\n");
-    // else
     {
         printf("Failed: Failed to solve sudoku\n");
-        return 1;
+        free(solvedB);
+        free(problemB);
+        return 0;
     }
-
     for (int i = 0; i < 9; i++)
     {
         for (int j = 0; j < 9; j++)
