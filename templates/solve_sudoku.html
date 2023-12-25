@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sudoku Solver
+{% endblock %}
+
+{% block main %}
+<!-- add clean to solved part #area && fix button bg -->
+<!-- <div><a href="/ss">reset</a></div> -->
+<div id="area"></div>
+<div id="selector">
+    Highlight: <span class="elem" onclick="highlight(0)">X</span><span class="elem" onclick="highlight(1)">1</span><span
+    class="elem" onclick="highlight(2)">2</span><span class="elem" onclick="highlight(3)">3</span><span class="elem"
+    onclick="highlight(4)">4</span><span class="elem" onclick="highlight(5)">5</span><span class="elem"
+    onclick="highlight(6)">6</span><span class="elem" onclick="highlight(7)">7</span><span class="elem"
+    onclick="highlight(8)">8</span><span class="elem" onclick="highlight(9)">9</span>
+</div>
+<button type="button" class="btn btn-dark" onclick="document.getElementById('input').classList.toggle('hide')">Toggle
+    Input area</button>
+<div id="input">
+    <div id="area2"></div>
+
+    <textarea class="form-control" placeholder="enter Sudoku as string without space" style="margin: 0 auto;max-width: 204px;letter-spacing: 8px;font-size: 1.3em;line-height: 1;" rows='9' cols="9" onkeyup="inpts();" type="text" maxlength=81 name="s" value=0 pattern="[0-9]{81}" required id="s"></textarea><br>
+    <button type="button" class="btn btn-dark"
+        onclick='let txt = document.getElementById("s").value; txt.length==81?printResult(txt):alert("81 digit required")'>Check</button>
+    <h1>Result:</h1>
+</div>
+
+<pre>{{ result | safe }}</pre>
+{% endblock %}

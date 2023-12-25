@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sudoku Solver
+{% endblock %}
+
+{% block main %}
+<!-- add clean to solved part #area && fix button bg -->
+<!-- <div><a href="/ss">reset</a></div> -->
+
+<div id="area-all">
+    <div id="con" class="con">
+    </div>
+</div>
+
+<pre>{{ result | safe }}</pre>
+{% endblock %}
