@@ -1,6 +1,6 @@
 # Sudoku Solver
 
-#### Video Demo:    [Sudoku Solver Tutorial: Web Interface, Flask Integration, and API Usage](https://youtu.be/h7ex93dNM0E?si=RP-GpmylW2hcPPkv)
+#### Video Demo:    [Sudoku Solver Tutorial: Web Interface, Flask Integration, and API Usage](https://youtu.be/RdV51m3M8F4)
 
 #### Description
 
