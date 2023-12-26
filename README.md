@@ -107,14 +107,14 @@ You can also use the Sudoku solver API by making a GET request with `curl` . Her
   
 
 ```bash
-  curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000&token=2024' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
+curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=<your_api_session_token>'
 ```
 
    If you don't have any key, use this one:
    
 
 ```bash
-curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000&token=2024' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
+curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
 ```
 
 ### Building the flask Project 
