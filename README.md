@@ -132,6 +132,7 @@ git clone https://github.com/naye2m/sudoku-solver.git
    
 
 ```bash
+cd sudoku-solver
 pip install -r requirements.txt
 ```
 
@@ -141,6 +142,13 @@ pip install -r requirements.txt
 ```bash
 flask run
 ```
+* **Imortant:** Make sure you've compiled your c_files and changed permission to 700 before 
+```bash
+cd c_file
+gcc ss.c -o ss
+chmod 700 ss
+```
+  **700 may work. At first try 700 if dosen't work try 744 if also dosen't work then try 777**
 
 4. Open the Sudoku Solver website in your browser and follow [the usage instructions above](#flask-integration-for-web-interface).
 
