@@ -58,14 +58,14 @@ This is a web-based Sudoku solver implemented in Flask. It allows users to input
    
 
 ```
-https://sudoku.solver.naye.xyz/ss
+https://sudoku.solver.moontreee.com/ss
 ```
 
 3. You can access the Sudoku solver history by visiting the following URL:
    
 
 ```
-https://sudoku.solver.naye.xyz/history_ss
+https://sudoku.solver.moontreee.com/history_ss
 ```
 
 4. Use the web interface to interact with the solver:
@@ -79,7 +79,7 @@ https://sudoku.solver.naye.xyz/history_ss
    
 
 ```
-https://sudoku.solver.naye.xyz/ss?s=090600800000503400807000610000050007000790100000006300070000020040000000203061784
+https://sudoku.solver.moontreee.com/ss?s=090600800000503400807000610000050007000790100000006300070000020040000000203061784
 ```
 
    This will directly display the solution for the provided Sudoku puzzle.
@@ -92,14 +92,14 @@ If you prefer a command-line interface, you can use the following API endpoint:
   
 
 ```
-https://sudoku.solver.naye.xyz/api/ss?sudoku=<81chars_sudoku_string_without_space>
+https://sudoku.solver.moontreee.com/api/ss?sudoku=<81chars_sudoku_string_without_space>
 ```
 
 * **Example:**
   
 
 ```
-https://sudoku.solver.naye.xyz/api/ss?sudoku=090600800000503400807000610000050007000790100000006300070000020040000000203061784
+https://sudoku.solver.moontreee.com/api/ss?sudoku=090600800000503400807000610000050007000790100000006300070000020040000000203061784
 ```
 
 * **Using Curl:**
@@ -107,14 +107,14 @@ You can also use the Sudoku solver API by making a GET request with `curl` . Her
   
 
 ```bash
-curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=<your_api_session_token>'
+curl 'https://sudoku.solver.moontreee.com/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=<your_api_session_token>'
 ```
 
    If you don't have any key, use this one:
    
 
 ```bash
-curl 'https://sudoku.solver.naye.xyz/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
+curl 'https://sudoku.solver.moontreee.com/api/ss?sudoku=835416907290057431000000000069134782123678000000000063650000000000345276374900000' -H 'cookie: session=eyJ1c2VyX2lkIjoxMX0.ZYiBIg.OvOgYfHQHDtEJ45kKZzNFo6__4Y'
 ```
 
 ### Building the flask Project 
